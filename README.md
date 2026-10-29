@@ -25,7 +25,7 @@ Das System ist in 7 aufeinander aufbauende Module unterteilt:
 
 ```text
 youtube-growth-system/
-├── data/                    # Reine Daten (Dicts & Listen) — HIER editierst du
+├── data/                    # Reine Daten (Dicts & Listen)
 │   ├── niches.py            # Step 01
 │   ├── identities.py        # Step 02
 │   ├── roadmap.py           # Step 03
@@ -41,27 +41,20 @@ youtube-growth-system/
 │   ├── render_seo.py
 │   ├── render_monetization.py
 │   └── render_repurpose.py
-├── output/                  # Generierte Markdown-Dateien (Ziel-Ordner)
-│   ├── 01_niche_analysis/
-│   ├── 02_channel_identity/
-│   ├── 03_content_roadmap/
-│   ├── 04_video_scripts/
-│   ├── 05_seo_thumbnail/
-│   ├── 06_monetization/
-│   └── 07_repurposing/
+├── output/                  # Generierte Markdown-Dateien
 ├── main.py                  # CLI-Einstiegspunkt
 └── README.md
 ```
-⚙️ Setup & Ausführung
+## ⚙️ Setup & Ausführung
 
-Voraussetzungen: Python 3.9+ (keine externen Packages nötig, nutzt nur die Python-Standardbibliothek).
+**Voraussetzungen:** Python 3.9+ (keine externen Packages nötig, nutzt nur die Python-Standardbibliothek).
 
-Hinweis für macOS-Nutzer: Falls python3 bei dir nicht funktioniert (z.B. durch einen kaputten Homebrew-Link), nutze /usr/bin/python3 oder lege dir einen Alias an:
-alias py3='/usr/bin/python3'
+> **Hinweis für macOS-Nutzer:** Falls `python3` bei dir nicht funktioniert, nutze `/usr/bin/python3` oder lege dir einen Alias an:  
+> `alias py3='/usr/bin/python3'`
 
-Einzelne Steps ausführen
+### Einzelne Steps ausführen
 
-bash
+```bash
 # Step 01-03 (Nischen, Identität, Roadmap für alle 10 Nischen auf einmal)
 python3 main.py 01
 python3 main.py 02
@@ -72,21 +65,28 @@ python3 main.py 04 --niche 1 --video 1
 python3 main.py 05 --niche 1 --video 1
 python3 main.py 06 --niche 1 --subs 2500
 python3 main.py 07 --niche 1 --video 1
-CLI-Parameter
+```
+### CLI-Parameter
 
---niche (1–10): Wählt die Nische aus (Standard: alle).
---video (1–12): Wählt das Video aus der Roadmap (Standard: 1).
---subs (Zahl): Für Step 06 — setzt den aktuellen Subscriber-Stand, um das richtige Monetarisierungs-Tier (T0–T3) zu triggern (Standard: 1000).
-🛠️ Anpassung (Customization)
+* `--niche (1–10)`: Wählt die Nische aus (Standard: alle).
+* `--video (1–12)`: Wählt das Video aus der Roadmap (Standard: 1).
+* `--subs (Zahl)`: Für Step 06 — setzt den aktuellen Subscriber-Stand, um das richtige Monetarisierungs-Tier (T0–T3) zu triggern (Standard: 1000).
+
+---
+
+## 🛠️ Anpassung (Customization)
 
 Das System ist so gebaut, dass du keinen Code ändern musst, um neue Inhalte hinzuzufügen:
 
-Neue Nische hinzufügen: Füge einen neuen Eintrag in data/niches.py (und den entsprechenden Folge-Dateien) mit dem nächsten rank (z.B. 11) hinzu.
-Titel ändern: Öffne data/roadmap.py und passe die Strings in den Tupeln an.
-Eigene Scripts schreiben: In data/scripts.py unter FLAGSHIP_SCRIPTS kannst du handgeschriebene Gold-Standard-Scripts hinterlegen, die die Template-Generierung überschreiben.
-🚀 Workflow-Tipp
+* **Neue Nische hinzufügen:** Füge einen neuen Eintrag in `data/niches.py` (und den entsprechenden Folge-Dateien) mit dem nächsten `rank` (z.B. 11) hinzu.
+* **Titel ändern:** Öffne `data/roadmap.py` und passe die Strings in den Tupeln an.
+* **Eigene Scripts schreiben:** In `data/scripts.py` unter `FLAGSHIP_SCRIPTS` kannst du handgeschriebene Gold-Standard-Scripts hinterlegen.
 
-Führe Step 01 und 02 aus, um deine Nische zu validieren.
-Führe Step 03 aus, um alle 12 Video-Titel zu generieren.
-Gehe die Liste durch und wähle dein Flagship-Video (Video 1).
-Führe Step 04–07 für genau dieses Video aus, um alle Assets (Skript, SEO, Pitch, Social Posts) für den Launch in der Hand zu haben.
+---
+
+## 🚀 Workflow-Tipp
+
+1. Führe Step 01 und 02 aus, um deine Nische zu validieren.
+2. Führe Step 03 aus, um alle 12 Video-Titel zu generieren.
+3. Gehe die Liste durch und wähle dein Flagship-Video (Video 1).
+4. Führe Step 04–07 für genau dieses Video aus, um alle Assets (Skript, SEO, Pitch, Social Posts) für den Launch in der Hand zu haben.
