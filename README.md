@@ -90,3 +90,11 @@ Das System ist so gebaut, dass du keinen Code ändern musst, um neue Inhalte hin
 2. Führe Step 03 aus, um alle 12 Video-Titel zu generieren.
 3. Gehe die Liste durch und wähle dein Flagship-Video (Video 1).
 4. Führe Step 04–07 für genau dieses Video aus, um alle Assets (Skript, SEO, Pitch, Social Posts) für den Launch in der Hand zu haben.
+
+---
+
+## 👤 Author & License
+
+Entwickelt von **Elvijs Landmans** ([@elvijslan-stack](https://github.com/elvijslan-stack)).
+
+Dieses Projekt ist unter der **MIT-Lizenz** lizenziert — frei nutzbar, anpassbar und weiterverwendbar. Siehe die [`LICENSE`](./LICENSE)-Datei für Details.
